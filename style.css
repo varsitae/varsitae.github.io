@@ -1,0 +1,126 @@
+/* first need to say what area you want to target
+then use curly brackets {} to select all the properties within that section */
+/* need to first create the CSS file then connect it to HTML file using a link tag with the file you want to link the HTML sheet to (i.e., in this case CSS)
+this link tag can go anywhere BUT it is most ideal in the HEAD tag specifically because before the rest of the content of the website is read, the head section will be processed first */
+/* can create a CSS file to keep everything tidy when you have multiple CSS sheets, especially for the different sections, e.g., 'main nav style' */
+/* if CSS file is not working, do: 1) make sure the file is saved, 2) refresh (cmmd+r) the webpage), or 3) go to the webpage, right click and click on 'inspect' which shows you the dev(elopers) tools but this is only temporary and local to me (i.e., only changes for me, not for everyone else using the same website) */
+
+/* USING BOX MODEL (coding version not maths lol) */
+
+body {
+    font-family: Calibri, Arial, Helvetica;
+    /* although you can use one font, selecting multiple fonts means if the webpage does not have your first font option, it will automatically choose your second option etc., */
+    margin: 0px;
+    /* margins = when they have 2 values, e.g., 10px; 100px, it means top+bottom, left+right
+    however, when you have 4 values, it goes clockwise, e.g., 10px; 30px; 40px; 70px, it means top, right, bottom, left */
+    font-size: 1.0vw;
+    /* vw = viewport width --> this is measured in % instead of pixels unlike em/rem and absolute pixels so it changes the screen size relative to what the resolution is on the device being used to view the website */
+}
+
+#logo {
+    /* # is needed when using ids (e.g., this used to be the h1 tag but we changed it to an id of # logo to make it more specifically targeted */
+
+    margin: 0px;
+    padding: 8px;
+    /* the same concept for margin values goes for padding too but padding is to do with the inside content not outside of the content */
+    /* changing the padding pixels meant the h1 title, e.g., BrightBlog, is not squashed to the margin or the text below it --> basically padding = spacing between the different content sections, e.g., texts or pictures */
+
+    font-family: "Fredoka One", sans-serif;
+    /* can download or simply link (embed) fonts from here --> https://fonts.google.com/ */
+    /* took out box shadow because he does not look right */
+    width: 11%;
+    text-shadow:
+    1px 1px 0px black, /* Bottom-right shadow */
+    -1px 1px 0px black, /* Bottom-left shadow */
+    1px -1px 0px black, /* Top-right shadow */
+    -1px -1px 0px black; /* Top-left shadow */
+}
+
+ul {
+    margin: 0px;
+}
+
+body > header {
+    /* doing the section (parent) > subsection (child) allows for only that specific area to be selected for this styling */
+    background-color: orange;
+    color: white;
+    /* to change text colour = colour tag */
+    display: flex;
+    height: 13vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+body > header > nav > ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+#nav-ul {
+    display: flex;
+}
+
+#nav-ul > li {
+    padding: 8px;
+    margin: 13px;
+}
+
+/* body > header > nav > ul > li > a { } --> change this into a class section (need to use . not #) so it is not overwhelming and difficult to remember */
+.navbutton {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 12px;
+    border: 1px solid whitesmoke;
+    border-radius: 10%;
+}
+
+body > main  article {
+    width: 80%;
+    margin: auto;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+#main-content > div {
+    width: 80%;
+}
+
+#formtitle {
+    text-align: center;    
+}
+
+form {
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+}
+
+body > footer {
+    background-color: orange;
+    display: flex;
+}
+
+#footer-ul {
+    display: flex;
+    list-style-type: none;
+    /* changing the list-style-stype to none removes the bullet points from the list */
+}
+
+#footer-ul > div > li {
+    margin-left: 12px;
+}
+
+#footer-ul > div > li > a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+/* background-color: rgb(178, 218, 233); */
+/* the flexbox allows us to center things, move things around, and make things pan out more easily, e.g., vertically or horizontally */
+/* if you want the logo and nav buttons to be horizontal and aligned together, you need to make the header a flexbox but if you just want the nav buttons to be aligned and horizontal, you need to make the li tags in the header a flexbox INSTEAD OF the whole header */
